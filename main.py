@@ -37,13 +37,23 @@ def play(word):
           if "_" not in word_compleet:
             guessed = True
    elif len(guess) == len(word) and guess.isalpha():
+      if guess in guessed_words:
+        print("You already guessed this word", guess)
+      elif guess != word:
+        print(guess, "is not in tha word")
+        tries -= 1
+        guessed_words.append(guess)
+      else:
+        guessed = True
+        word_compleet = word
+        
     else:
       print("not a valid guess...")
     print(display_hangman(tries))
     print(word_compleet)
     print("\n")
-
-
+  if guessed:
+    print("Congrats, you")
 
 
 #Poppetje
