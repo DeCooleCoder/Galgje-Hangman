@@ -8,6 +8,16 @@ def getthaword():
   return word.upper() 
 #alle letters worden in uppercase gezet voor beter leesbaareid
 
+def Intro():
+  print("-----------------------------")
+  print("|                           |")
+  print("|       Galgje/Hangman      |")
+  print("|                           |")
+  print("-----------------------------")
+  print("")
+  print("    Press enter to play  ")
+  input("")
+
 def play(word):
   word_compleet = "_" * len(word)
   guessed = False
@@ -135,6 +145,7 @@ def display_hangman(tries):
     return stages[tries]
 
 
+Intro()
 
 #Game engine
 def main():
