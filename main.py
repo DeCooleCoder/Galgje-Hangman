@@ -61,7 +61,7 @@ def play(word):
     else:
       print("not a valid guess...")
     print(display_hangman(tries))
-    print(sorted(guessed_letters))
+    print("Guessed letters: ", sorted(guessed_letters))
     print(word_compleet)
     print("\n")
   if guessed:
@@ -77,9 +77,9 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \\|/
+                   |     \|/
                    |      |
-                   |     / \\
+                   |     / \
                    -
                 """,
                 # oke je hebt nog een kans
@@ -87,7 +87,7 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \\|/
+                   |     \|/
                    |      |
                    |     / 
                    -
@@ -97,7 +97,7 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \\|/
+                   |     \|/
                    |      |
                    |      
                    -
@@ -107,7 +107,7 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \\|
+                   |     \|
                    |      |
                    |     
                    -
