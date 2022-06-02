@@ -1,6 +1,6 @@
 import random
 
-woordlist = ["informatica", "informatiekunde", "spelletje", "spelletje", "aardigheidje", "sholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
+woordlist = ["informatica", "informatiekunde", "spelletje", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
 
 def getthaword():
   word = random.choice(woordlist)
@@ -15,7 +15,7 @@ def play(word):
   tries = 6
   print("Lets play some Hangman!")
   print(display_hangman(tries))
-  print(word_completion)
+  print(word_compleet)
   print("\n")
   while not guessed and tries > 0:
     guess = input("Please guess a letter or word: ").upper()
@@ -29,14 +29,14 @@ def play(word):
       else:
         print("Nice!", guess, "is in tha word")
         guessed_letters.append(guess)
-        word_as_list = list(word_completion)
+        word_as_list = list(word_compleet)
         indices = [i for i, letter in enumerate (word) if letter == guess]
         for index in indices:
           word_as_list[index] = guess
           word_compleet = "".join(word_as_list)
           if "_" not in word_compleet:
             guessed = True
-   elif len(guess) == len(word) and guess.isalpha():
+    elif len(guess) == len(word) and guess.isalpha():
       if guess in guessed_words:
         print("You already guessed this word", guess)
       elif guess != word:
@@ -53,7 +53,9 @@ def play(word):
     print(word_compleet)
     print("\n")
   if guessed:
-    print("Congrats, you")
+    print("Congrats, you guessed the word! YOU WIN!!!")
+  else:
+    print("too bad you lost :| The word was " + word + " maby next time...")
 
 
 #Poppetje
@@ -134,13 +136,12 @@ def display_hangman(tries):
 
 
 #Game engine
-def game():
-  print("yay! you won!")
-  again = input("Play again? (y/n)")
-  # als je wil, nog een keer spelen
-  if again == "y":
-    game()
-  else:
-    print("THE END")
+def main():
+  word = getthaword()
+  play(word)
+  while input("play again? (Y/N) ").upper() == "Y":
+    word = getthaword
+    play(word)
 
-game()
+if __name__ == "__main__":
+  main()
