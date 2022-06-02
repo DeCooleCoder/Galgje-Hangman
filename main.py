@@ -1,4 +1,4 @@
-import random
+ffefeimport random
 
 woordlist = ["informatica", "informatiekunde", "spelletje", "spelletje", "aardigheidje", "sholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
 
@@ -8,11 +8,33 @@ def getthaword():
 #alle letters worden in uppercase gezet voor beter leesbaareid
 
 def play(word):
-  word_compleet = "_" * length(word)
+  word_compleet = "_" * len(word)
   guessed = False
   guessed_letters = []
   guessed_words = []
   tries = 6
+  print("Lets play some Hangman!")
+  print(display_hangman(tries))
+  print(word_completion)
+  print("\n")
+  while not guessed and tries > 0:
+    guess = input("Please guess a letter or word: ").upper()
+    if len(guess) == 1 and guess.isalpha():
+      if guess in guessed_letters:
+        print("You have already guessed that letter", guess)
+      elif guess not in word:
+        print(guess, "is not in the word... too bad D:")
+        tries -= 1
+        guessed_letters.append(guess)
+      else:
+        print("Nice!", guess, "is in tha word")
+   elif len(guess) == len(word) and guess.isalpha():
+    
+    else:
+      print("not a valid guess...")
+    print(display_hangman(tries))
+    print(word_compleet)
+    print("\n")
 
 
 
