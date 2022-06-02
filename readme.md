@@ -19,8 +19,8 @@ Verbeteringen (deze mogen alleen als het basisspel werkt en is ingeleverd):\
 Eisen\
 [x]Er wordt gebruik gemaakt van commentaar in het programma.\
 [x]Er wordt minimaal 1 functie gebruikt.\
-[]Er is input van de gebruiker (evt. met controle op de invoer).\
-[]Er wordt gebruik gemaakt van concatenation.\
+[x]Er is input van de gebruiker (evt. met controle op de invoer).\
+[x]Er wordt gebruik gemaakt van concatenation.\
 [x]Er wordt gebruik gemaakt van string methodes.\
 [x]Er wordt gebruik gemaakt van tenminste één while-loop.\
 [x]Er wordt gebruik gemaakt van minstens één list.

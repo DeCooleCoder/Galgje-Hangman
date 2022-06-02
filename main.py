@@ -51,7 +51,7 @@ def play(word):
       if guess in guessed_words:
         print("You already guessed this word", guess)
       elif guess != word:
-        print(guess, "is not in tha word")
+        print(guess, "is not tha word")
         tries -= 1
         guessed_words.append(guess)
       else:
