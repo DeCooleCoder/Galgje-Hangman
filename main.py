@@ -71,7 +71,7 @@ def play(woord):
   if geraden:
     print("Gefeliciteerd je hebt het woord goed geraden!!! Hier heb een smiley :D")
   else:
-    print("Jammer je hebt het fout... het woord was" + woord + " volgende keer beter :|")
+    print("Jammer je hebt het fout... het woord was " + woord + " volgende keer beter :|")
 
 
 #Poppetje
@@ -84,37 +84,37 @@ def display_hangman(tries):
                    |     \\|/
                    |      |
                    |     / \\
-                   -
+                  ---
                 """,
                 # oke je hebt nog een kans
                 """
                    --------
                    |      |
                    |      O
-                   |     \\|/
+                   |     \|/
                    |      |
                    |     / 
-                   -
+                  ---
                 """,
                 # zowat bijna halverwege
                 """
                    --------
                    |      |
                    |      O
-                   |     \\|/
+                   |     \|/
                    |      |
                    |      
-                   -
+                  ---
                 """,
                 # je hebt nu al 3 keer gefaald
                 """
                    --------
                    |      |
                    |      O
-                   |     \\|
+                   |     \|
                    |      |
                    |     
-                   -
+                  ---
                 """,
                 # 2x gefaald
                 """
@@ -124,7 +124,7 @@ def display_hangman(tries):
                    |      |
                    |      |
                    |     
-                   -
+                  ---
                 """,
                 # 1 keer gefaald
                 """
@@ -134,7 +134,7 @@ def display_hangman(tries):
                    |    
                    |      
                    |     
-                   -
+                  ---
                 """,
                 # Humble Beginnings
                 """
@@ -144,10 +144,10 @@ def display_hangman(tries):
                    |    
                    |      
                    |     
-                   -
+                  ---
                 """
     ]
-    sleep(1.5)
+    sleep(1.25)
     os.system('clear')
     return stages[tries]
 
