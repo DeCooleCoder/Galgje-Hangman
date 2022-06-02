@@ -51,16 +51,6 @@ def play(woord):
           woord_compleet = "".join(woord_as_list)
           if "_" not in woord_compleet:
             geraden = True
-    elif len(guess) == len(woord) and guess.isalpha():
-      if guess in geraden_woorden:
-        print("Je hebt dit woord al geraden", guess)
-      elif guess != woord:
-        print(guess, "is niet het woord")
-        tries -= 1
-        geraden_woorden.append(guess)
-      else:
-        geraden = True
-        woord_compleet = woord
         
     else:
       print("Niet een geldig antwoord")
@@ -155,6 +145,7 @@ def display_hangman(tries):
 Intro()
 
 #Game engine
+
 def main():
   woord = getthawoord()
   play(woord)
@@ -162,6 +153,6 @@ def main():
     woord = getthawoord
     play(woord)
 
-
+    
 if __name__ == "__main__":
   main()
