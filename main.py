@@ -61,6 +61,7 @@ def play(word):
     else:
       print("not a valid guess...")
     print(display_hangman(tries))
+    print(sorted(guessed_letters))
     print(word_compleet)
     print("\n")
   if guessed:

@@ -13,7 +13,7 @@ Zolang er beurten zijn mag de speler door. Als er geen beurten meer zijn is het 
 Verbeteringen (deze mogen alleen als het basisspel werkt en is ingeleverd):\
 [x]De speler mag alleen 1 letter invoeren, meer niet. Dit mag een hoofdletter of een kleine letter zijn. Bij een verkeerde invoer wordt een foutboodschap getoond en neemt het aantal beurten met 1 af. Bij een goede invoer gaat het spel verder zoals in het basisspel. (max. 10 punten)\
 [x]Aan het einde van het spel is er de vraag of je nog een spel wil spelen. Bij ‘ja’ wordt het spel opnieuw gestart met een nieuw willekeurig woord. Bij ‘nee’ wordt het spel gestopt. (max. 10 punten)\
-[]Ook de al eerder geprobeerd, maar niet-correcte letters worden in alfabetische volgorde aan de speler getoond, zodat de speler weet welke letters gebruikt zijn. (max. 15 punten)\
+[x]Ook de al eerder geprobeerd, maar niet-correcte letters worden in alfabetische volgorde aan de speler getoond, zodat de speler weet welke letters gebruikt zijn. (max. 15 punten)\
 [x]Het is niet mogelijk om (per ongeluk) cijfers in te voeren. (max. 5 punten)
 
 Eisen\
