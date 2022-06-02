@@ -1,12 +1,12 @@
 import random
 
-#wordlist
-woordlist = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
+#woordlist
+woordlijst = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
 
-def getthaword():
-  word = random.choice(woordlist)
-  return word.upper() 
-#alle letters worden in uppercase gezet voor beter leesbaareid
+def getthawoord():
+  woord = random.choice(woordlijst)
+  return woord.upper() 
+#alle letters woorden in uppercase gezet voor beter leesbaareid
 
 def Intro():
   print("-----------------------------")
@@ -18,56 +18,56 @@ def Intro():
   print("    Press enter to play  ")
   input("")
 
-def play(word):
-  word_compleet = "_" * len(word)
-  guessed = False
-  guessed_letters = []
-  guessed_words = []
+def play(woord):
+  woord_compleet = "_" * len(woord)
+  geraden = False
+  geraden_letters = []
+  geraden_woorden = []
   tries = 6
   print("Lets play some Hangman!")
   print(display_hangman(tries))
-  print(word_compleet)
+  print(woord_compleet)
   print("\n")
-  while not guessed and tries > 0:
-    guess = input("Please guess a letter or word: ").upper()
+  while not geraden and tries > 0:
+    guess = input("Please guess a letter or woord: ").upper()
     if len(guess) == 1 and guess.isalpha():
-      if guess in guessed_letters:
-        print("You have already guessed that letter", guess)
-      elif guess not in word:
-        print(guess, "is not in the word... too bad D:")
+      if guess in geraden_letters:
+        print("You have already geraden that letter", guess)
+      elif guess not in woord:
+        print(guess, "is not in the woord... too bad D:")
         tries -= 1
-        guessed_letters.append(guess)
+        geraden_letters.append(guess)
       else:
-        print("Nice!", guess, "is in tha word")
-        guessed_letters.append(guess)
-        word_as_list = list(word_compleet)
-        indices = [i for i, letter in enumerate (word) if letter == guess]
+        print("Nice!", guess, "is in tha woord")
+        geraden_letters.append(guess)
+        woord_as_list = list(woord_compleet)
+        indices = [i for i, letter in enumerate (woord) if letter == guess]
         for index in indices:
-          word_as_list[index] = guess
-          word_compleet = "".join(word_as_list)
-          if "_" not in word_compleet:
-            guessed = True
-    elif len(guess) == len(word) and guess.isalpha():
-      if guess in guessed_words:
-        print("You already guessed this word", guess)
-      elif guess != word:
-        print(guess, "is not tha word")
+          woord_as_list[index] = guess
+          woord_compleet = "".join(woord_as_list)
+          if "_" not in woord_compleet:
+            geraden = True
+    elif len(guess) == len(woord) and guess.isalpha():
+      if guess in geraden_woorden:
+        print("You already geraden this woord", guess)
+      elif guess != woord:
+        print(guess, "is not tha woord")
         tries -= 1
-        guessed_words.append(guess)
+        geraden_woorden.append(guess)
       else:
-        guessed = True
-        word_compleet = word
+        geraden = True
+        woord_compleet = woord
         
     else:
       print("not a valid guess...")
     print(display_hangman(tries))
-    print("Guessed letters: ", sorted(guessed_letters))
-    print(word_compleet)
+    print("Guessed letters: ", sorted(geraden_letters))
+    print(woord_compleet)
     print("\n")
-  if guessed:
-    print("Congrats, you guessed the word! YOU WIN!!!")
+  if geraden:
+    print("Congrats, you geraden the woord! YOU WIN!!!")
   else:
-    print("too bad you lost :| The word was " + word + " maby next time...")
+    print("too bad you lost :| The woord was " + woord + " maby next time...")
 
 
 #Poppetje
@@ -150,11 +150,11 @@ Intro()
 
 #Game engine
 def main():
-  word = getthaword()
-  play(word)
+  woord = getthawoord()
+  play(woord)
   while input("play again? (Y/N) ").upper() == "Y":
-    word = getthaword
-    play(word)
+    woord = getthawoord
+    play(woord)
 
 if __name__ == "__main__":
   main()
