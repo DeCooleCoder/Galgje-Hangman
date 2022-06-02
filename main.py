@@ -77,9 +77,9 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \|/
+                   |     \\|/
                    |      |
-                   |     / \
+                   |     / \\
                    -
                 """,
                 # oke je hebt nog een kans
@@ -87,7 +87,7 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \|/
+                   |     \\|/
                    |      |
                    |     / 
                    -
@@ -97,7 +97,7 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \|/
+                   |     \\|/
                    |      |
                    |      
                    -
@@ -107,7 +107,7 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \|
+                   |     \\|
                    |      |
                    |     
                    -
