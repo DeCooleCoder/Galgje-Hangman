@@ -1,6 +1,7 @@
 import random
 
-woordlist = ["informatica", "informatiekunde", "spelletje", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
+#wordlist
+woordlist = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
 
 def getthaword():
   word = random.choice(woordlist)
