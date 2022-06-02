@@ -1,4 +1,6 @@
 import random
+import os
+from time import sleep
 
 #woordlist
 woordlijst = ["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
@@ -18,27 +20,29 @@ def Intro():
   print("    Press enter to play  ")
   input("")
 
+
 def play(woord):
+  os.system('clear')
   woord_compleet = "_" * len(woord)
   geraden = False
   geraden_letters = []
   geraden_woorden = []
   tries = 6
-  print("Lets play some Hangman!")
+  print("Laten we het potje Galgje maar beginnen!")
   print(display_hangman(tries))
   print(woord_compleet)
   print("\n")
   while not geraden and tries > 0:
-    guess = input("Please guess a letter or woord: ").upper()
+    guess = input("raad een letter dat je denkt dat in het woord voorkomt: ").upper()
     if len(guess) == 1 and guess.isalpha():
       if guess in geraden_letters:
-        print("You have already geraden that letter", guess)
+        print("Je hebt dat letter al geraden", guess)
       elif guess not in woord:
-        print(guess, "is not in the woord... too bad D:")
+        print(guess, "is niet in het woord... Jammer D:")
         tries -= 1
         geraden_letters.append(guess)
       else:
-        print("Nice!", guess, "is in tha woord")
+        print("Nice!", guess, "is in het woord")
         geraden_letters.append(guess)
         woord_as_list = list(woord_compleet)
         indices = [i for i, letter in enumerate (woord) if letter == guess]
@@ -49,9 +53,9 @@ def play(woord):
             geraden = True
     elif len(guess) == len(woord) and guess.isalpha():
       if guess in geraden_woorden:
-        print("You already geraden this woord", guess)
+        print("Je hebt dit woord al geraden", guess)
       elif guess != woord:
-        print(guess, "is not tha woord")
+        print(guess, "is niet het woord")
         tries -= 1
         geraden_woorden.append(guess)
       else:
@@ -59,15 +63,15 @@ def play(woord):
         woord_compleet = woord
         
     else:
-      print("not a valid guess...")
+      print("Niet een geldig antwoord")
     print(display_hangman(tries))
-    print("Guessed letters: ", sorted(geraden_letters))
+    print("Geraden letters: ", sorted(geraden_letters))
     print(woord_compleet)
     print("\n")
   if geraden:
-    print("Congrats, you geraden the woord! YOU WIN!!!")
+    print("Gefeliciteerd je hebt het woord goed geraden!!! Hier heb een smiley :D")
   else:
-    print("too bad you lost :| The woord was " + woord + " maby next time...")
+    print("Jammer je hebt het fout... het woord was" + woord + " volgende keer beter :|")
 
 
 #Poppetje
@@ -143,6 +147,8 @@ def display_hangman(tries):
                    -
                 """
     ]
+    sleep(1.5)
+    os.system('clear')
     return stages[tries]
 
 
@@ -155,6 +161,7 @@ def main():
   while input("play again? (Y/N) ").upper() == "Y":
     woord = getthawoord
     play(woord)
+
 
 if __name__ == "__main__":
   main()
