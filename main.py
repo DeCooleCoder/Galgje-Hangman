@@ -1,4 +1,4 @@
-ffefeimport random
+import random
 
 woordlist = ["informatica", "informatiekunde", "spelletje", "spelletje", "aardigheidje", "sholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
 
@@ -28,8 +28,15 @@ def play(word):
         guessed_letters.append(guess)
       else:
         print("Nice!", guess, "is in tha word")
+        guessed_letters.append(guess)
+        word_as_list = list(word_completion)
+        indices = [i for i, letter in enumerate (word) if letter == guess]
+        for index in indices:
+          word_as_list[index] = guess
+          word_compleet = "".join(word_as_list)
+          if "_" not in word_compleet:
+            guessed = True
    elif len(guess) == len(word) and guess.isalpha():
-    
     else:
       print("not a valid guess...")
     print(display_hangman(tries))
