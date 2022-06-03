@@ -59,8 +59,10 @@ def play(woord):
     print("\n")
   if geraden:
     print("Gefeliciteerd je hebt het woord goed geraden!!! Hier heb een smiley :D")
+    replay()
   else:
     print("Jammer je hebt het fout... het woord was " + woord + " volgende keer beter :|")
+    replay()
 
 
 #Poppetje
@@ -150,6 +152,6 @@ def replay():
     return main()
   
 #Game engine
-Intro()  
+Intro()
 main()
 replay()
