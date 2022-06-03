@@ -147,7 +147,7 @@ def main():
 def replay():
   while input("play again? (Y/N) ").upper() == "Y":
     os.system('clear')
-    return Intro()
+    return main()
   
 #Game engine
 Intro()  
