@@ -26,7 +26,6 @@ def play(woord):
   woord_compleet = "_" * len(woord)
   geraden = False
   geraden_letters = []
-  geraden_woorden = []
   tries = 6
   print("Laten we het potje Galgje maar beginnen!")
   print(display_hangman(tries))
@@ -141,18 +140,16 @@ def display_hangman(tries):
     os.system('clear')
     return stages[tries]
 
-
-Intro()
-
-#Game engine
-
 def main():
   woord = getthawoord()
   play(woord)
-  while input("play again? (Y/N) ").upper() == "Y":
-    woord = getthawoord
-    play(woord)
 
-    
-if __name__ == "__main__":
-  main()
+def replay():
+  while input("play again? (Y/N) ").upper() == "Y":
+    os.system('clear')
+    return Intro()
+  
+#Game engine
+Intro()  
+main()
+replay()
