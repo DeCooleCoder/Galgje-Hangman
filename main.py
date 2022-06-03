@@ -59,10 +59,8 @@ def play(woord):
     print("\n")
   if geraden:
     print("Gefeliciteerd je hebt het woord goed geraden!!! Hier heb een smiley :D")
-    replay()
   else:
     print("Jammer je hebt het fout... het woord was " + woord + " volgende keer beter :|")
-    replay()
 
 
 #Poppetje
@@ -150,8 +148,14 @@ def replay():
   while input("play again? (Y/N) ").upper() == "Y":
     os.system('clear')
     return main()
+  else:
+    print("\nAch ja, hopelijk vond je het spel leuk, ja toch? ( ͡ʘ ͜ʖ ͡ʘ) \nGemaakt door de coole coders van het Sint-Maartenscollege 4h3 2021-2022 (Joshua L. & Bo H.)")
+    sleep(5)
+    os.system('clear')
+    return Intro()
+    
   
 #Game engine
-Intro()
+Intro()  
 main()
 replay()
